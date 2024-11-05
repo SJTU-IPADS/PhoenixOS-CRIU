@@ -854,8 +854,8 @@ int collect_fd(int pid, FdinfoEntry *e, struct rst_info *rst_info, bool fake)
 
 	fdesc = find_file_desc(e);
 	if (fdesc == NULL) {
-		pr_err("No file for fd %d id %#x\n", e->fd, e->id);
-		return -1;
+		pr_info("No file for fd %d id %#x\n", e->fd, e->id);
+		return 0;
 	}
 
 	if (!collect_fd_to(pid, e, rst_info, fdesc, fake, false))
