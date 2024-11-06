@@ -92,6 +92,7 @@ int dump_unsupp_fd(struct fd_parms *p, int lfd, char *more, char *info, FdinfoEn
 		return 0;
 	if (ret == -ENOTSUP){
 		pr_info("Can't dump file %d of that type [%o] (%s %s)\n", p->fd, p->stat.st_mode, more, info);
+        return 0;
 	}
 	return -1;
 }
